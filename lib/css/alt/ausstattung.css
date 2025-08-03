@@ -1,0 +1,55 @@
+@charset "utf-8";
+#sliderglobal{width:100%}
+#sliderinhaltglobal{width:100%;max-height:450px;overflow:hidden}
+#sliderinhaltglobal img{width:100%;height:100%;object-fit:cover;max-height:450px}
+article h1,article h4{padding:10px;font-family:"Yellowtail",cursive;text-align:center;letter-spacing:.15em}
+article h2{font-family:"Lucida Handwriting"}
+.room{display:flex;flex-wrap:wrap}
+.box{flex:0 0 calc(33% - 20px);border:1px solid #000;margin:10px;position:relative;transition:background-color .3s;min-height:182px}
+.box:hover{background-color:#f5f5f59e}
+.box img,.box a{width:100%}
+.box a:active,.box a:focus{text-decoration:none;color:#792b3a}
+.overlay{flex-direction:column;justify-content:flex-end;position:absolute;top:0;right:0;bottom:0;left:0;color:#fff;background-color:rgba(173,163,143,0.6);transition:background-color .8s ease-out,left .3s ease 0.5s,right .3s ease 0.5s,bottom .3s ease 0.5s,top .3s ease 0.5s,width .3s ease 0.5s,height .3s ease .5s}
+.overlay h5,.overlay h4{text-align:center;color:#fff;margin:0}
+.overlay h5{padding:19px 0 49px;font-weight:400;font-size:20px}
+.overlay h4{font-size:30px;line-height:36px}
+.zimmer{margin-bottom:40px;overflow:hidden;background-color:#16151A;border-radius:10px;padding-top:5px;position:relative}
+.zimmer h2{font-family:"Lucida Handwriting";font-size:1em;color:#FFF;font-weight:700;text-align:center}
+.zimmer .container{background-color:#FFF;position:relative}
+.zimmer .container ul{padding:0}
+.zimmer .container ul li{display:inline-table;width:25.5%}
+.zimmer .container ul li img{width:100%;height:auto;max-height:157px}
+.zimmer .container ul .gross{display:block;width:57.5%;margin:0 15%}
+.zimmer .zimmercontainerplan{margin:0 2%;width:20%;right:0;position:absolute;top:0}
+.zimmer .zimmercontainer{font-size:.8em;margin:1%;color:#FFF;border-width:2px;border-top-style:solid;border-color:#FFF;padding:1.5%;text-align:left}
+.zimmer .zimmercontainer .link{text-align:right;right:1px;bottom:1px;background-color:#D8D1CB;padding:8px;position:absolute;border-top-left-radius:10px}
+.zimmer .zimmercontainer .link a{font-family:"Lucida Handwriting";color:#121212;font-size:1.6em;font-weight:700;text-decoration:none}
+#leftblock section,.imagewallcenter{background-color:#FFF;padding:2%;margin:2% 1%;box-shadow:0 0 2px 1px #747566}
+.beschreibung .plan{width:40%;float:right;clear:right;margin:2%;font-size:.625em;text-align:center}
+.beschreibung .plan img{width:100%;height:auto}
+.beschreibung .button{display:inline-block;width:35%;margin:10px .5%;background-color:#16151A;padding:5px 0;text-align:center;font-size:1.3em;color:#FFF}
+.imagewallcenter{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+.imagewallcenter h2{width:100%;text-align:center;order:-1}
+.imagewallcenter figure{margin:1%;width:calc(33% - 2%);box-sizing:border-box}
+.imagewallcenter figure img{width:100%;height:auto;object-fit:cover;max-height:280px}
+.dateninfo{padding-top:7px;font-size:1.5em;clear:both;position:relative}
+.dateninfo a{height:40px;color:#000;display:inline-block;font-weight:700}
+.dateninfo .qmroom{color:#393939;font-size:1.1em;position:absolute;right:0}
+.contentinhalt section a,.beschreibung a{text-decoration:none;color:#396229;font-weight:700}
+#leftblock section table{width:95%;margin:20px auto}
+#leftblock section table tr:nth-of-type(2),section table tr:nth-of-type(4){background-color:#DFDFDF}
+#leftblock section table tr td{padding:7px}
+
+@media screen and (max-width:768px) {
+.box{flex:0 0 100%;margin:10px 0}
+.overlay h4{font-size:30px;line-height:35px}
+.overlay h5{font-size:16px}
+.zimmer .zimmercontainer .link{position:static;background-color:#FFF;text-align:center;padding:1%}
+.zimmer .zimmercontainer .link a{color:#000;font-size:1.5em;font-weight:700}
+.imagewallcenter{flex-direction:column}
+.imagewallcenter figure{width:80%;margin:10px auto}
+.beschreibung .plan{width:95%;float:none}
+.beschreibung .button{width:95%;margin:10px auto;height:45px;display:flex;align-items:center;justify-content:center}
+.dateninfo .qmroom{width:100%;display:block;position:relative}
+
+}

@@ -1,0 +1,9 @@
+@charset "utf-8";
+article h1 { padding: 10px; font-family: "Yellowtail", cursive; text-align: center; letter-spacing: 0.15em; }
+#leftblock section { margin: 2em 1%; padding: 10px 1%; background-color: #FFF; box-shadow: 0px 0px 2px 1px #989986; width: 95%; }
+#leftblock section h2 { background-color: #16151A; padding: 15px; color: #FFFFFF; font-family: 'Yellowtail', cursive; font-size: 1.5em; text-align: center; margin: -10px -1%; }
+#leftblock section table { width: 95%; margin: 20px auto; }
+#leftblock section table tr:nth-of-type(2), section table tr:nth-of-type(4) { background-color: #DFDFDF; }
+#leftblock section table tr td { padding: 7px; }
+#leftblock section ul li h3 { font-weight: bold; }
+#leftblock section .inhalt { padding: 4px; }

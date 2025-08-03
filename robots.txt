@@ -1,0 +1,8 @@
+Sitemap: http://www.luttinger-bichlbach.at/sitemap.xml
+
+# ===================================
+# Folgende Seiten sollen nicht indexiert werden:
+# ===================================
+
+User-agent: *
+Disallow: /error/

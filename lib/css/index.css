@@ -1,0 +1,608 @@
+@charset "utf-8";
+
+/* ************************************************************************
+ * 0) ALLGEMEINE GRUNDEINSTELLUNGEN FÜR RESPONSIVES VERHALTEN
+ * ************************************************************************/
+
+/* Box-Sizing: So wird Padding nicht auf die Breite draufgerechnet */
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+/* HTML und BODY: Verhindern von ungewolltem Horizontal-Scroll */
+html, body {
+margin: 0;
+padding: 0;
+max-width: 100%;
+overflow-x: hidden; /* schneidet zur Not Überlappendes ab */
+font-family: 'Open Sans', Arial, sans-serif; /* Beispiel-Schrift */
+}
+
+/* ************************************************************************
+ * GLOBALE VARIABLEN
+ * ************************************************************************/
+:root {
+--weinrot: #800020;        /* Hauptfarbe */
+--weinrot-hover: #a00030;  /* Hover-Farbe */
+--text-color: #333;
+--heading-font: 'Yellowtail', cursive;       /* optional */
+--body-font: 'Open Sans', Arial, sans-serif; /* optional */
+}
+
+/* ************************************************************************
+ * 1) VOLLBREITER SLIDER (#slider, #slides, .slide, .caption, Pfeile)
+ * ************************************************************************/
+#slider {
+position: relative;
+width: 100%;
+margin: 0 auto;
+overflow: hidden;
+/* Optional: min-height: 70vh; */
+}
+
+#sliderinhalt,
+#slides {
+width: 100%;
+position: relative;
+overflow: hidden;
+height: auto;
+}
+
+/* Einzelne Slide */
+.slide {
+position: relative;
+width: 100%;
+height: auto;
+}
+
+/* Slider-Bilder */
+.slide img {
+width: 100%;
+height: auto;
+object-fit: cover;
+object-position: center;
+display: block;
+}
+
+/* Caption mit Gradient-Overlay */
+.caption {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+padding: 50px 25px 20px;
+box-sizing: border-box;
+color: #fff;
+font-size: 1.4rem;
+text-align: center;
+background: linear-gradient(
+0deg,
+rgba(0, 0, 0, 0.6) 0%,
+rgba(0, 0, 0, 0.3) 60%,
+rgba(0, 0, 0, 0) 100%
+);
+}
+.caption span {
+display: block;
+font-weight: bold;
+font-size: 1.5rem;
+margin-bottom: 10px;
+}
+
+/* Slider-Pfeile (z. B. für SlidesJS) */
+.slidesjs-previous,
+.slidesjs-next {
+display: block;
+width: 55px;
+height: 55px;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 10;
+background-color: rgba(0, 0, 0, 0.5);
+color: #fff;
+text-align: center;
+line-height: 55px;
+font-size: 1.5em;
+border-radius: 50%;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.slidesjs-previous:hover,
+.slidesjs-next:hover {
+background-color: rgba(255, 255, 255, 0.8);
+color: #222;
+transform: translateY(-50%) scale(1.1);
+}
+.slidesjs-previous {
+left: 30px;
+}
+.slidesjs-next {
+right: 30px;
+}
+
+/* Play/Stop/Pagination (SlidesJS) ausblenden, falls ungenutzt */
+.slidesjs-play,
+.slidesjs-stop,
+.slidesjs-pagination {
+display: none !important;
+}
+
+/* ************************************************************************
+ * 2) CONTENT-BEREICH (contentinhalt, section, figure, etc.)
+ * ************************************************************************/
+/* Sections */
+.contentinhalt section {
+background-color: #fff;
+padding: 40px 50px;
+margin-bottom: 30px;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+position: relative;
+}
+
+/* Jede 2. Section optional andersfarbig */
+.contentinhalt section:nth-child(2n) {
+background-color: #f9f9f9;
+}
+
+.contentinhalt section h1,
+.contentinhalt section h2,
+.contentinhalt section h3 {
+color: var(--weinrot);
+margin-top: 0;
+margin-bottom: 25px;
+font-size: 2.6em;
+line-height: 1.2;
+}
+
+/* Textabsätze */
+.contentinhalt section p {
+margin-bottom: 20px;
+text-align: center;
+font-size: 1.05rem;
+line-height: 1.7;
+}
+
+/* Listen ohne sichtbare Bullets */
+.contentinhalt section ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+.contentinhalt section ul li {
+margin-bottom: 8px;
+position: relative;
+}
+.contentinhalt section ul li::before {
+content: "";
+}
+
+/* Figures (Bilder) in Section -> Desktop */
+.contentinhalt section figure {
+float: left;
+width: 40%;
+margin-right: 5%;
+margin-bottom: 10px;
+text-align: center;
+}
+.contentinhalt section figure img {
+width: 100%;
+height: 250px; /* Feste Höhe statt max-height */
+object-fit: cover; /* Bild wird proportional skaliert und zugeschnitten */
+border-radius: 5px;
+}
+.contentinhalt section figure figcaption {
+font-size: 0.95rem;
+color: #666;
+margin-top: 5px;
+}
+
+/* Buttons -> Pillenform */
+.contentinhalt section .buttoncontainer {
+width: 100%;
+display: flex;
+justify-content: flex-end;
+gap: 15px;
+margin-top: 30px;
+}
+.contentinhalt section .buttoncontainer .button {
+display: inline-block;
+background-color: var(--weinrot);
+color: #fff;
+font-size: 1.15rem;
+padding: 14px 35px;
+border-radius: 50px;
+text-align: center;
+text-decoration: none;
+transition: background-color 0.3s ease;
+cursor: pointer;
+font-weight: 600;
+border: none; /* falls du <button> nutzt */
+}
+.contentinhalt section .buttoncontainer .button::after {
+content: '>';
+margin-left: 12px;
+font-size: 1rem;
+position: relative;
+top: 1px;
+}
+.contentinhalt section .buttoncontainer .button:hover {
+background-color: var(--weinrot-hover);
+}
+
+.direktbuchung-hinweis, .angebote-kacheln {
+margin: 2rem 0;
+padding: 1rem;
+background: #f6f6f6;
+border-radius: 8px;
+}
+.direktbuchung-hinweis ul {
+list-style: disc;
+padding-left: 2rem;
+}
+.buttoncontainer {
+margin-top: 1rem;
+}
+.button {
+display: inline-block;
+margin: 0.5rem;
+padding: 0.7rem 1.2rem;
+background: #007bff;
+color: #fff;
+text-decoration: none;
+border-radius: 4px;
+}
+.button:hover {
+background: #0056b3;
+}
+
+.angebote-kacheln .kachel-container {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+justify-content: center;
+margin-top: 1rem;
+}
+.angebote-kacheln .kachel {
+flex: 1 1 220px;
+max-width: 280px;
+background: #fff;
+color: #000;
+text-decoration: none;
+border: 1px solid #ddd;
+border-radius: 8px;
+transition: transform 0.3s;
+}
+.angebote-kacheln .kachel:hover {
+transform: scale(1.02);
+}
+.angebote-kacheln .kachel-inhalt {
+padding: 1rem;
+text-align: center;
+}
+.angebote-kacheln .kachel h3 {
+margin-top: 0;
+font-size: 1.2rem;
+}
+.angebote-kacheln .kachel figure {
+float: none !important;
+width: 80% !important;
+margin-right: 0 !important;
+margin-bottom: 0 !important; /* ggf. anpassen */
+}
+
+/* ************************************************************************
+ * 3) VIDEO-WRAPPER
+ * ************************************************************************/
+.video-wrapper {
+width: 100%;
+margin: 50px 0;
+position: relative;
+background: #000; /* Optionaler BG */
+overflow: hidden;
+height: 600px; /* Fixe Desktop-Höhe */
+}
+.video-wrapper iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+/* ************************************************************************
+ * 4) RESPONSIVE MEDIA QUERIES
+ * ************************************************************************/
+
+/* Tablets <= 992px */
+@media screen and (max-width: 992px) {
+.caption {
+font-size: 1.3rem;
+padding: 40px 15px 20px;
+}
+.slidesjs-previous,
+.slidesjs-next {
+width: 45px;
+height: 45px;
+font-size: 1.3em;
+line-height: 45px;
+}
+
+.contentinhalt section {
+padding: 30px 40px;
+}
+.contentinhalt section h1,
+.contentinhalt section h2,
+.contentinhalt section h3 {
+font-size: 2.4em;
+}
+.video-wrapper {
+height: 500px;
+}
+}
+
+/* Mobile <= 768px */
+@media screen and (max-width: 768px) {
+
+/* Slider: Höhe nicht ändern, nur auf 60vh für Mobil */
+#slider,
+#sliderinhalt,
+#slides,
+.slidesjs-container,
+.slidesjs-control,
+.slidesjs-control .slidesjs-slide {
+width: 100% !important;
+height: 60vh !important;
+max-height: 60vh !important;
+}
+#slides img {
+width: 100% !important;
+height: 100% !important;
+object-fit: cover !important;
+object-position: center !important;
+}
+
+/* Pfeile weiter nach innen -> kein Überhang */
+.slidesjs-previous {
+left: 10px !important;
+}
+.slidesjs-next {
+right: 10px !important;
+}
+
+/* Caption etwas anpassen */
+#slides .caption {
+font-size: 1em; /* statt 0.7 */
+padding: 8px 12px;
+}
+
+/* Haupt-Container schmaler */
+.contentinhalt {
+width: 100% !important;
+margin: 0 auto;
+padding: 20px 10px;
+}
+
+/* Sections in voller Breite */
+.contentinhalt section {
+width: 100% !important;
+margin: 0 auto 20px auto !important;
+float: none !important;
+}
+
+/* Headlines etwas verkleinern */
+.contentinhalt h2,
+.contentinhalt h3 {
+font-size: 2em;
+}
+.contentinhalt h1 {
+font-size: 1.6rem !important; /* statt z.B. 2.2rem */
+}
+
+/* Figures (Bilder) auf volle Breite in .contentinhalt */
+.contentinhalt section figure {
+width: 100% !important;
+float: none !important;
+margin-right: 0 !important;
+margin-bottom: 20px;
+}
+.contentinhalt section figure img {
+width: 100% !important;
+height: auto !important;
+}
+
+/* Buttons untereinander */
+.contentinhalt section .buttoncontainer {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+.contentinhalt section .buttoncontainer .button {
+width: 100% !important;
+max-width: 300px; /* optional */
+text-align: center;
+}
+}
+
+/* Winzige Screens <= 561px */
+@media screen and (max-width: 561px) {
+.slidesjs-previous,
+.slidesjs-next {
+width: 30px;
+height: 30px;
+font-size: 0.9em;
+line-height: 30px;
+}
+#slides .caption {
+font-size: 0.9em;
+padding: 6px 10px;
+}
+
+/* Beispielweise Überschriften in articles zentrieren */
+article h1,
+article h2,
+article h3 {
+text-align: center;
+}
+article img {
+float: none;
+width: 70%;
+margin: 10px auto;
+display: block;
+}
+article figure {
+float: none;
+width: 70%;
+margin: 10px auto;
+display: block;
+}
+
+.contentinhalt section {
+margin: 10px auto;
+min-height: 80px;
+}
+.contentinhalt section figure {
+display: block;
+margin: auto auto 5%;
+width: 61%;
+}
+.contentinhalt section .buttoncontainer .button {
+width: 90%;
+margin: 5% auto;
+}
+}
+
+/* Allerkleinste <= 380px */
+@media screen and (max-width: 380px) {
+#slides .caption {
+font-size: 0.85em;
+padding: 5px 8px;
+}
+}
+
+/* ************************************************************************
+ * 5) ARTICLE-SPEZIFISCHE ANPASSUNGEN
+ * ************************************************************************/
+
+/* Optional: Begrenze die Breite von article und füge Außenabstand hinzu */
+article {
+max-width: 1200px; /* Reduzierte max-width für bessere Lesbarkeit auf großen Bildschirmen */
+margin: 0 auto;
+padding: 1rem;
+}
+
+/* H1 in einer Zeile halten (ggf. mit Abschneiden) + zentrieren */
+article h1 {
+white-space: nowrap;      /* Verhindert Umbruch */
+overflow: hidden;         /* Blendet Überhang aus */
+text-overflow: ellipsis;  /* Setzt "..." am Ende */
+display: inline-block;
+max-width: 100%;          /* Damit sich die Ellipse anpasst */
+font-size: 2rem;          /* ggf. anpassen, damit es nicht zu oft abschneidet */
+text-align: center;
+margin-bottom: 1.5rem; /*  Abstand unterhalb der Überschrift angepasst */
+}
+
+/* Zentrierte Zeile(n) z.B. für "1 Zimmer mit DU/WC ... 4 Ferienwohnungen ..." */
+article .zimmer-info {
+text-align: center;
+font-weight: bold;
+margin: 1.5rem 0;
+}
+
+/* ========================================================================
+   EINHEITLICHE BILDGRÖSSE (object-fit: cover):
+   Nutze dazu ein eigenes Container-Grid (z.B. .image-row) innerhalb article
+   ======================================================================== */
+article .image-row {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 1.5rem; /* Abstand zwischen Bildern im image-row vergrößert */
+margin-bottom: 2rem;
+}
+
+/* Jede "figure" erhält feste Breite/Höhe (anpassen nach Bedarf) */
+article .image-row figure {
+width: 300px;
+height: 200px;
+margin: 0;
+position: relative;
+overflow: hidden;
+background: #f0f0f0;
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* Bild füllt Container aus */
+article .image-row figure img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* Falls du Bildunterschriften in figure hast */
+article .image-row figure figcaption {
+position: absolute;
+bottom: 5px;
+background-color: rgba(0,0,0,0.4);
+color: #fff;
+font-size: 0.9rem;
+padding: 2px 5px;
+border-radius: 3px;
+}
+
+/* MOBILE-ANPASSUNGEN für .image-row (wenn du nicht möchtest,
+   dass Bilder starr 300x200 bleiben) */
+@media screen and (max-width: 768px) {
+article .image-row figure {
+width: 48%; /*  leicht angepasst für etwas mehr Zwischenraum */
+height: auto;       /* Höhe dynamisch */
+}
+article .image-row figure img {
+height: auto;
+object-fit: contain; /* kein Beschneiden mehr, wenn gewünscht */
+}
+}
+
+@media screen and (max-width: 561px) {
+/* Hier könntest du z.B. alle Bilder untereinander anzeigen */
+article .image-row {
+flex-direction: column;
+align-items: center;
+}
+article .image-row figure {
+width: 90%; /*  leicht angepasst für schmalere Bildschirme */
+margin: 0 auto 1rem auto; /* etwas mehr Abstand nach unten */
+height: auto;
+}
+article h1 {
+font-size: 1.6rem;
+/* wenn du bei sehr kleinem Screen
+   das erzwungene nowrap aufheben willst:
+   white-space: normal;
+*/
+}
+}
+
+/* ************************************************************************
+ * 6) ZUSÄTZLICHE ARTICLE-TYPOGRAFIE (neu hinzugefügt)
+ * ************************************************************************/
+article p {
+line-height: 1.7; /* Zeilenhöhe leicht erhöht für bessere Lesbarkeit */
+font-size: 1.1rem; /* Schriftgröße leicht erhöht, falls gewünscht */
+margin-bottom: 1.2rem; /* Abstand nach unten leicht angepasst */
+}
+
+article h2 {
+font-size: 1.8rem;
+font-weight: bold;
+margin-bottom: 1.2rem;
+}

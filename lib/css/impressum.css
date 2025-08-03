@@ -1,0 +1,4 @@
+@charset "utf-8";
+#impressum { background-color: #E5D9D9; }
+#cookies { background-color: #F1F8DC; }
+#impressum, #cookies { padding: 1%; margin-bottom: 10px; }

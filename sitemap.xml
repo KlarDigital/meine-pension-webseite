@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Startseite -->
+  <url>
+    <loc>https://www.luttinger-bichlbach.at/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.luttinger-bichlbach.at/index.php?lang=en</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Rubrikseiten -->
+  <url><loc>https://www.luttinger-bichlbach.at/kontakt.php</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/kontakt.php?lang=en</loc><changefreq>weekly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/unser-haus.php</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/unser-haus.php?lang=en</loc><changefreq>weekly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/inklusivleistungen.php</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/inklusivleistungen.php?lang=en</loc><changefreq>weekly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/zimmer-wohnung.php</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/zimmer-wohnung.php?lang=en</loc><changefreq>weekly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/preise.php</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/preise.php?lang=en</loc><changefreq>weekly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/anreise.php</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/anreise.php?lang=en</loc><changefreq>weekly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/aktivitaeten.php</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/aktivitaeten.php?lang=en</loc><changefreq>weekly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/buchen.php</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/buchen.php?lang=en</loc><changefreq>weekly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/intro.php</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/intro.php?lang=en</loc><changefreq>weekly</changefreq></url>
+
+  <!-- Detailseiten Unterkünfte -->
+  <url><loc>https://www.luttinger-bichlbach.at/ausstattung/zimmer.php</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/ausstattung/zimmer.php?lang=en</loc><changefreq>monthly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/ausstattung/wohnung1.php</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/ausstattung/wohnung1.php?lang=en</loc><changefreq>monthly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/ausstattung/wohnung5.php</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/ausstattung/wohnung5.php?lang=en</loc><changefreq>monthly</changefreq></url>
+
+  <url><loc>https://www.luttinger-bichlbach.at/ausstattung/wohnung6.php</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.luttinger-bichlbach.at/ausstattung/wohnung6.php?lang=en</loc><changefreq>monthly</changefreq></url>
+
+</urlset>

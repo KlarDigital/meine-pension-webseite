@@ -1,0 +1,59 @@
+@charset "utf-8";
+ul,li{list-style:none!important;margin:0;padding:0}
+#sliderglobal{width:100%}
+#sliderinhaltglobal{width:100%;max-height:450px;overflow:hidden}
+#sliderinhaltglobal img{width:100%;height:100%;object-fit:cover;max-height:450px}
+article h1,article h4{padding:10px;font-family:"Yellowtail",cursive;text-align:center;letter-spacing:.15em;color:#2D2D2D;margin-bottom:15px}
+article h1{font-size:2em}
+article h4{font-size:1.4em;font-weight:400;margin-top:0}
+article h2{font-family:"Lucida Handwriting",cursive;font-size:1.3em;text-align:center;color:#2D2D2D;margin:15px 0}
+.room{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:20px 0;padding:0}
+.box{flex:0 0 calc(50% - 20px);background-color:#fff;border:1px solid #ddd;border-radius:6px;overflow:hidden;position:relative;margin:0;transition:box-shadow 0.3s,transform .3s;min-height:400px}
+.box:hover{box-shadow:0 11px 12px rgba(62,61,61,93%);transform:translateY(-3px)}
+.box a{display:block;width:100%;height:100%;color:inherit;text-decoration:none;position:relative}
+.box img{width:100%;height:400px;object-fit:cover;display:block}
+.overlay{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:rgba(0,0,0,0.45);color:#fff;text-align:center;opacity:1}
+.overlay h4,.overlay h5{margin:0;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.8);font-family:"Yellowtail",cursive}
+.overlay h4{font-size:3.4em;margin-bottom:5px}
+.overlay h5{font-size:1.7em;font-weight:400;line-height:1.2}
+.innerBorder{position:absolute;top:10px;left:10px;right:10px;bottom:10px;border:2px solid rgba(255,255,255,0.6);border-radius:4px;pointer-events:none}
+.zimmer{margin-bottom:40px;overflow:hidden;background-color:#16151A;border-radius:10px;padding-top:5px;position:relative}
+.zimmer h2{font-family:"Lucida Handwriting",cursive;font-size:1em;color:#FFF;font-weight:700;text-align:center}
+.zimmer .container{background-color:#FFF;position:relative}
+.zimmer .container ul{padding:0;list-style:none;margin:0}
+.zimmer .container ul li{display:inline-table;width:25.5%}
+.zimmer .container ul li img{width:100%;height:auto;max-height:157px;display:block}
+.zimmer .container ul .gross{display:block;width:57.5%;margin:0 15%}
+.zimmer .zimmercontainerplan{margin:0 2%;width:20%;right:0;position:absolute;top:0}
+.zimmer .zimmercontainer{font-size:.8em;margin:1%;color:#FFF;border-top:2px solid #FFF;padding:1.5%;text-align:left}
+.zimmer .zimmercontainer .link{text-align:right;right:1px;bottom:1px;background-color:#D8D1CB;padding:8px;position:absolute;border-top-left-radius:10px}
+.zimmer .zimmercontainer .link a{font-family:"Lucida Handwriting",cursive;color:#121212;font-size:1.6em;font-weight:700;text-decoration:none}
+#leftblock section,.imagewallcenter{background-color:#FFF;padding:2%;margin:2% 1%;box-shadow:0 0 2px 1px #747566;border-radius:5px}
+.beschreibung .plan{width:40%;float:right;margin:2%;font-size:.625em;text-align:center}
+.beschreibung .plan img{width:100%;height:auto}
+.beschreibung .button{display:inline-block;width:35%;margin:10px .5%;background-color:#16151A;padding:5px 0;text-align:center;font-size:1.3em;color:#FFF;border-radius:4px}
+.dateninfo{display:flex;align-items:center;justify-content:space-between;padding-top:7px;font-size:1.1em;clear:both;position:relative;gap:15px}
+.dateninfo a.youtube{text-decoration:none;background-color:#800020;color:#fff;padding:6px 10px;border-radius:4px;transition:background .3s ease;font-weight:600;display:inline-block}
+.dateninfo a.youtube:hover{background-color:#a00030}
+.dateninfo .qmroom{color:#333;font-size:.95em;font-weight:600;white-space:nowrap;margin-left:auto}
+.imagewallcenter{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:10px}
+.imagewallcenter h2{width:100%;text-align:center;order:-1;font-family:"Yellowtail",cursive;font-size:1.8em;margin:0;color:#2D2D2D}
+.imagewallcenter figure{margin:1%;width:calc(33% - 2%);box-sizing:border-box;overflow:hidden;border-radius:5px;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+.imagewallcenter figure img{width:100%;height:auto;object-fit:cover;max-height:280px;display:block}
+.contentinhalt section a,.beschreibung a{text-decoration:none;color:#800020;font-weight:700;border-bottom:1px solid transparent;transition:color .3s ease,border-bottom .3s ease}
+.contentinhalt section a:hover,.beschreibung a:hover{color:#a00030;border-bottom:1px solid #a00030}
+#leftblock section table{width:95%;margin:20px auto;border-collapse:collapse;text-align:center}
+#leftblock section table tr:nth-of-type(2),section table tr:nth-of-type(4){background-color:#DFDFDF}
+#leftblock section table tr td{padding:7px;border:1px solid #ccc}
+@media screen and (max-width: 768px) {
+.box{flex:0 0 100%}
+.overlay h4{font-size:2.5em}
+.overlay h5{font-size:1.4em}
+.dateninfo{flex-direction:column;align-items:flex-start}
+.dateninfo a.youtube{margin-bottom:10px}
+.dateninfo .qmroom{margin-left:0;margin-top:5px}
+.imagewallcenter{flex-direction:column}
+.imagewallcenter figure{width:80%;margin:10px auto}
+.beschreibung .plan{width:95%;float:none}
+.beschreibung .button{width:95%;margin:10px auto;height:45px;display:flex;align-items:center;justify-content:center}
+}

@@ -1,0 +1,146 @@
+@charset "utf-8";
+article h1, article h2{color:#2d2d2d;font-family:Yellowtail, cursive;margin-top:0}
+.contentinhalt section{padding:5px 0;margin-bottom:15px;overflow:hidden}
+.contentinhalt section a{text-decoration:none;color:#333;font-weight:700}
+.contentinhalt section figure{width:35%;margin-right:5%}
+.contentinhalt section p{display:table;text-align:justify}
+.contentinhalt section .box{background:linear-gradient(to right, #fff7e9 20%, #e3dbda 100%);width:90%;margin:3% auto;padding:20px}
+.contentinhalt section .box img{height:auto;max-width:100%}
+.contentinhalt article h3{font-size:1.8em}
+.contentinhalt article h2{font-size:2.7em}
+.contentinhalt article h1{font-size:3.4em}
+.contentinhalt article h2, h1{font-weight:400}
+.contentinhalt article p, li{font-size:1.2em}
+.accordion {
+background-color: #f1f1f1;
+color: #333;
+cursor: pointer;
+padding: 18px;
+width: 100%;
+border: 2px solid #007bff;
+border-radius: 5px;
+text-align: left;
+outline: none;
+font-size: 18px;
+font-weight: bold;
+transition: 0.4s;
+margin-bottom: 10px;
+}
+
+.accordion:hover {
+background-color: #e2e2e2;
+}
+
+.accordion:after {
+content: '\002B';
+color: #007bff;
+font-weight: bold;
+float: right;
+margin-left: 5px;
+font-size: 24px;
+}
+
+.active, .accordion.active {
+background-color: #d4d4d4;
+}
+
+.active:after {
+content: "\2212";
+}
+
+.panel {
+padding: 0 18px;
+background-color: white;
+display: none;
+overflow: hidden;
+border: 1px solid #007bff;
+border-top: none;
+border-radius: 0 0 5px 5px;
+margin-bottom: 10px;
+}
+
+/* Other Styles */
+.info-item {
+margin-bottom: 20px;
+}
+
+.info-item h3 {
+font-size: 1.5em;
+margin-bottom: 10px;
+}
+
+.info-item p, .info-item ul {
+font-size: 1.2em;
+line-height: 1.5em;
+}
+
+.info-item ul {
+list-style-type: none;
+padding: 0;
+}
+
+.info-item ul li {
+margin-bottom: 10px;
+}
+
+.info-item ul li:before {
+content: "•";
+color: #007bff;
+font-weight: bold;
+display: inline-block;
+width: 1em;
+margin-left: -1em;
+}
+
+.info-item a {
+color: #007bff;
+text-decoration: none;
+}
+
+.info-item a:hover {
+text-decoration: underline;
+}
+
+.icon {
+margin-right: 10px;
+}
+
+.info-box {
+background: #f7f7f7;
+border: 1px solid #ddd;
+padding: 15px;
+border-radius: 5px;
+margin-bottom: 20px;
+}
+
+.info-box h3 {
+font-size: 1.5em;
+margin-top: 0;
+}
+
+.info-box p, .info-box ul {
+margin: 0;
+}
+
+.info-box ul {
+padding-left: 20px;
+}
+
+.info-box ul li {
+list-style-type: disc;
+}
+
+.info-box a {
+color: #007bff;
+}
+
+.weather-widget, .feedback-section {
+margin-bottom: 20px;
+background: #f1f1f1;
+padding: 20px;
+border-radius: 5px;
+}
+
+.weather-widget h3, .feedback-section h3 {
+margin-top: 0;
+}

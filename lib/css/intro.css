@@ -1,0 +1,422 @@
+@charset "utf-8";
+#sliderinhaltglobal img{width:100%;height:100%;object-fit:cover;max-height:450px}
+#leftblock {
+/* Anpassbare Variablen (Farben, Fonts, Schatten) */
+--accent-color: #800020;       /* Weinrot (Akzent) */
+--background-light: #f7f7f7;   /* Helles Grau/Beige für Boxen */
+--heading-color: #2d2d2d;      /* Dunkler Text für Headlines */
+--text-color: #555;            /* Grauer Text */
+--font-family-heading: 'Yellowtail', cursive; /* Dekorative Schrift */
+--font-family-body: 'Open Sans', Arial, sans-serif;
+--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+/* Grundlegendes Layout - Überschriften */
+h1,
+h2 {
+color: var(--heading-color);
+font-family: var(--font-family-heading);
+margin-top: 0;
+margin-bottom: 15px;
+text-align: center; /* Falls du alle Überschriften zentriert möchtest */
+}
+/* Optional: h1 größer als h2, wenn gewünscht */
+h1 {
+font-size: 2em; /* oder 2.5em nach Wunsch */
+}
+h2 {
+font-size: 1.8em;
+}
+
+/* Text & Links */
+p {
+display: block;
+text-align: justify;
+font-size: 1.2rem;
+color: var(--text-color);
+font-family: var(--font-family-body);
+margin-bottom: 1rem;
+}
+a {
+color: var(--accent-color);
+font-weight: 700;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+
+/* Allgemeine Sektionen */
+section {
+padding: 1rem 0;
+margin-bottom: 2rem;
+overflow: hidden;
+}
+
+/* Boxen (weiße Kärtchen) */
+section .box {
+background: #fff;
+border: 1px solid #ddd;
+padding: 1rem;
+border-radius: 8px;
+max-width: 90%;
+margin: 1rem auto;
+box-shadow: var(--box-shadow);
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+/* Bilder */
+img {
+max-width: 100%;
+max-height: 400px;
+height: auto;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+figure {
+width: 100%;
+margin-bottom: 1rem;
+}
+
+/* Artikel-Überschriften (wenn H3/H2/H1 in <article>) */
+article h3 {
+font-size: 1.8rem;
+color: var(--heading-color);
+font-weight: bold;
+font-family: var(--font-family-heading);
+margin-bottom: 1rem;
+text-align: center;
+}
+article h2 {
+font-size: 2.2rem; /* leicht größer */
+font-weight: 400;
+}
+article h1 {
+font-size: 2.6rem;
+font-weight: 400;
+}
+
+/* Listen - keine Punkte oder eigene Bullets */
+ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+li {
+font-size: 1.2rem;
+margin-bottom: 0.5rem;
+font-family: var(--font-family-body);
+}
+
+/* Info-/Inhalts-Boxen */
+.info-box {
+background: var(--background-light);
+border: 1px solid #ddd;
+padding: 1rem;
+border-radius: 5px;
+margin-bottom: 2rem;
+box-shadow: var(--box-shadow);
+}
+.info-box h3 {
+font-size: 1.5rem;
+margin-top: 0;
+font-family: var(--font-family-heading);
+}
+.info-box a {
+color: var(--accent-color);
+}
+
+/* Wetter-Widget */
+.weather-widget {
+background: #fff;
+border: 1px solid #ddd;
+border-radius: 6px;
+box-shadow: var(--box-shadow);
+padding: 1.5rem;
+margin: 1.5rem 0;
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
+}
+.weather-widget h3 {
+font-family: var(--font-family-heading);
+font-size: 2rem;
+color: var(--heading-color);
+margin-top: 0;
+margin-bottom: 1rem;
+text-align: center;
+}
+.weather-widget h3 .icon {
+margin-right: 0.5rem;
+font-size: 1.2em;
+vertical-align: middle;
+}
+#weather p {
+margin: 0.5rem 0;
+line-height: 1.5;
+color: var(--text-color);
+font-size: 1rem;
+display: flex;
+align-items: center;
+font-family: var(--font-family-body);
+}
+#weather p img {
+width: 32px;
+height: 32px;
+object-fit: cover;
+margin-right: 0.5rem;
+border-radius: 4px;
+}
+
+/* Buttons (z. B. .btn-primary) */
+.btn-primary {
+background-color: var(--accent-color);
+border: none;
+color: #fff !important;
+padding: 1rem 2rem;
+font-size: 1.1rem;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+font-family: var(--font-family-body);
+}
+.btn-primary:hover {
+background-color: #600015; /* dunkleres Weinrot */
+}
+
+/* Akkordeon (falls benötigt) */
+.accordion {
+background-color: #f1f1f1;
+color: #333;
+cursor: pointer;
+padding: 1rem;
+width: 100%;
+border: 2px solid var(--accent-color);
+border-radius: 5px;
+text-align: left;
+outline: none;
+font-size: 1rem;
+font-weight: bold;
+transition: 0.4s;
+margin-bottom: 1rem;
+}
+.accordion:hover {
+background-color: #e2e2e2;
+}
+.accordion::after {
+content: '\002B';
+color: var(--accent-color);
+font-weight: bold;
+float: right;
+margin-left: 5px;
+font-size: 1.5rem;
+}
+.accordion.active {
+background-color: #d4d4d4;
+}
+.accordion.active::after {
+content: "\2212";
+}
+.panel {
+padding: 0 1rem;
+background-color: #fff;
+display: none;
+overflow: hidden;
+border: 1px solid var(--accent-color);
+border-top: none;
+border-radius: 0 0 5px 5px;
+margin-bottom: 1rem;
+}
+
+/* Feedback-Bereich (falls verwendet) */
+.feedback-section {
+margin-bottom: 2rem;
+background: #f1f1f1;
+padding: 1rem;
+border-radius: 5px;
+box-shadow: var(--box-shadow);
+}
+.feedback-section h3 {
+font-size: 1.5rem;
+color: #333;
+font-family: var(--font-family-heading);
+}
+.feedback-section form input[type="text"],
+.feedback-section form input[type="email"],
+.feedback-section form textarea {
+width: 100%;
+padding: 1rem;
+margin-bottom: 1rem;
+border: 1px solid #ddd;
+border-radius: 5px;
+font-size: 1.1rem;
+font-family: var(--font-family-body);
+}
+.feedback-section form button {
+background-color: #9d0020;
+color: #fff;
+padding: 1rem 2rem;
+font-size: 1.1rem;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+.feedback-section form button:hover {
+background-color: #218838;
+}
+
+/* Inhaltsverzeichnis (falls genutzt) */
+.toc {
+background: #fff;
+border: 1px solid #ccc;
+padding: 1rem;
+border-radius: 8px;
+margin-bottom: 3rem;
+box-shadow: var(--box-shadow);
+}
+.toc h2 {
+font-size: 1.8rem;
+margin-top: 0;
+color: var(--heading-color);
+font-family: var(--font-family-heading);
+margin-bottom: 1.5rem;
+}
+.toc ul {
+list-style-type: none;
+margin: 0;
+padding-left: 0;
+}
+.toc ul li {
+margin-bottom: 1.2rem;
+}
+.toc ul li a {
+color: #333;
+text-decoration: none;
+font-size: 1.2rem;
+font-weight: 600;
+font-family: var(--font-family-body);
+}
+.toc ul li a:hover {
+color: var(--accent-color);
+text-decoration: underline;
+}
+.toc ul li ul {
+margin-top: 0.8rem;
+margin-left: 2rem;
+}
+.toc ul li ul li {
+margin-bottom: 0.8rem;
+}
+.toc ul li ul li a {
+font-size: 1.1rem;
+font-weight: normal;
+}
+.toc ul li::marker {
+content: "\2022";
+color: var(--accent-color);
+}
+
+/* #aktuelles (falls verwendet) */
+#aktuelles ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+#aktuelles li {
+margin-bottom: 0.5rem;
+}
+#aktuelles li a {
+display: flex;
+align-items: center;
+}
+#aktuelles .fa {
+font-size: 1.5rem;
+margin-right: 1rem;
+}
+#aktuelles .fa-file-pdf-o {
+color: #f00;
+}
+#aktuelles .fa-file-image-o {
+color: #008000;
+}
+
+/* RESPONSIVE - max-width: 768px */
+@media (max-width: 768px) {
+h1 {
+font-size: 1.8em;
+}
+h2 {
+font-size: 1.5em;
+}
+p, li {
+font-size: 0.9rem;
+}
+section .box {
+width: 100%;
+margin: 0 auto 1.5rem auto;
+padding: 1rem;
+}
+.accordion {
+font-size: 1rem;
+padding: 1rem;
+}
+section .box img {
+width: 100%;
+height: auto;
+}
+.weather-widget {
+padding: 1rem;
+}
+.weather-widget h3 {
+font-size: 1.6rem;
+}
+#weather p {
+font-size: 0.95rem;
+}
+#weather p img {
+width: 24px;
+height: 24px;
+}
+.feedback-section {
+padding: 1rem;
+}
+.btn-primary,
+.feedback-section form button {
+width: 100%;
+padding: 1.2rem;
+font-size: 1.1rem;
+}
+section {
+margin-bottom: 2rem;
+}
+.feedback-section form input[type="text"],
+.feedback-section form input[type="email"],
+.feedback-section form textarea {
+font-size: 1.1rem;
+padding: 1.2rem;
+width: 100%;
+}
+.info-box,
+.panel {
+padding: 1rem;
+}
+figure img {
+width: 100%;
+height: auto;
+}
+.toc {
+padding: 1rem;
+}
+.toc h2 {
+font-size: 1.6rem;
+}
+.toc ul li a {
+font-size: 1.1rem;
+}
+.toc ul li ul li a {
+font-size: 1rem;
+}
+}
+}
